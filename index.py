@@ -3,6 +3,11 @@ import tornado.ioloop
 import json
 
 
+class helloWorldHandler(tornado.web.RequestHandler):
+    def get(self):
+        self.write("Hello world")
+
+
 class basicRequestHandler(tornado.web.RequestHandler):
     def get(self):
         grid = self.get_argument('grid')
@@ -30,6 +35,7 @@ class basicRequestHandler(tornado.web.RequestHandler):
 
 if __name__ == "__main__":
     app = tornado.web.Application([
+        (r"/", helloWorldHandler),
         (r"/solve", basicRequestHandler)
     ])
 
