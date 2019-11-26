@@ -1,6 +1,37 @@
 import tornado.web
 import tornado.ioloop
+# import paho.mqtt.client as mqtt
+import time
 import json
+
+
+# def on_connect(client, userdata, flags, rc):
+#     print("Connected with a result code " + str(rc))
+#     client.subscribe("$SYS/#")
+#
+#
+# def on_message(client, userdata, msg):
+#     print(msg.topic + " " + str(msg.payload))
+
+
+broker = "broker.hivemq.com"
+
+# client = mqtt.Client()
+#
+# client.on_connect = on_connect
+# # client.on_disconnect = on_disconnect
+# # client.on_log = on_log
+# client.on_message = on_message
+#
+# client.connect("mqtt.eclipse.org", 1883, 60)
+#
+# client.loop_forever()
+# client.loop_start()
+# client.subscribe("house/sensor1")
+# client.publish("house/sensor1", "my first message")
+# time.sleep(4)
+# client.loop_stop()
+# client.disconnect()
 
 
 class helloWorldHandler(tornado.web.RequestHandler):
